@@ -1,0 +1,41 @@
+<div>
+    <div class="container mt-3"> 
+        <h1></h1>
+        <div class="row">
+              <div class="col-lg-6 offset-lg-3"> 
+                <div class="card">
+               
+                <div class="card-body">
+                     <h3 class="text-center">virtual scrol</h3>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class=" col-lg-6  mt-3">
+                <div class="card">
+                    <div class="card-body text-center">Tabla </div>
+                    <input type="number" [(ngModel)]="tabla" placeholder="ingrese numero">
+                    <input type="number"  [(ngModel)]="hasta" placeholder="ingrese numero2">
+                    <button (click)="multiplicar()" class="btn btn-info"> enviar</button>
+                </div>
+                
+             </div>
+             <div class=" col-lg-6  mt-3">
+                <div class="card">
+                    <div class="card-body text-center">resultado</div>
+                    <cdk-virtual-scroll-viewport itemSize="11">
+                       <table class="table">
+                        <tr *cdkVirtualFor=" let valor of resultado; let i = index">
+                            <td class="text-c">{{valor.tabla}} x {{i}} = {{valor.resultado}}</td>
+                        </tr>
+                       </table>
+                    </cdk-virtual-scroll-viewport>
+                </div>
+                
+             </div>
+            
+        </div>
+
+    </div>
+</div>
